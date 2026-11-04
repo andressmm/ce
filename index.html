@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#f8f5ed">
+<meta name="description" content="Corré y entérate. Agenda deportiva, difusión de carreras y publicidad para organizadores y marcas de Argentina y Uruguay.">
+<title>Corré y entérate · Agenda y publicidad deportiva</title>
+<link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="i-arrow" viewBox="0 0 24 24">
+    <path d="M5 12h14m-7-7 7 7-7 7" />
+  </symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24">
+    <rect x="3" y="5" width="18" height="16" rx="2" />
+    <path d="M16 3v4M8 3v4M3 10h18" />
+  </symbol>
+  <symbol id="i-users" viewBox="0 0 24 24">
+    <circle cx="9" cy="8" r="3" />
+    <path d="M3 20v-2a6 6 0 0 1 12 0v2M17 5a3 3 0 0 1 0 6m4 9v-2a6 6 0 0 0-4-5.7" />
+  </symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24">
+    <path d="M4 22V3m0 2q5-3 9 0t7 0v12q-5 3-9 0t-7 0" />
+  </symbol>
+  <symbol id="i-megaphone" viewBox="0 0 24 24">
+    <path d="M3 11v3a2 2 0 0 0 2 2h3l2 5h3l-2-6 9-5V4L8 9H5a2 2 0 0 0-2 2Z" />
+  </symbol>
+  <symbol id="i-search" viewBox="0 0 24 24">
+    <circle cx="10.7" cy="10.7" r="7.2" />
+    <path d="m16 16 5 5" />
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+    <circle cx="12" cy="10" r="2.5" />
+  </symbol>
+  <symbol id="i-trophy" viewBox="0 0 24 24">
+    <path d="M7 3h10v8a5 5 0 0 1-10 0V3Zm10 2h4v3a4 4 0 0 1-4 4M7 5H3v3a4 4 0 0 0 4 4m5 4v5m-4 0h8" />
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24">
+    <path d="m4 12 5 5L20 6" />
+  </symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24">
+    <path d="M4 6h16M4 12h16M4 18h16" />
+  </symbol>
+  <symbol id="i-instagram" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <path d="M17 7h.01" />
+  </symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24">
+    <rect x="2.5" y="4" width="19" height="16" rx="2" />
+    <path d="m3 6 9 7 9-7" />
+  </symbol>
+  <symbol id="i-star" viewBox="0 0 24 24">
+    <path d="m12 2 3.1 6.4 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z" />
+  </symbol>
+</svg>
+<div class="topbar">Conectamos organizadores, marcas y corredores.</div>
+<header class="nav-wrap">
+  <nav class="nav container" aria-label="Navegación principal"><a class="brand" href="#agenda" aria-label="Corré y entérate inicio">
+      <img class="brand-logo" src="ce.png" alt="" width="48" height="48">
+      <div class="brand-text"><strong>CORRÉ Y ENTÉRATE</strong><small>Agenda & difusión deportiva</small></div>
+    </a>
+    <div class="nav-links" id="navLinks"><a href="#agenda">Agenda</a><a href="#organizadores">Publicidad</a><a href="#contacto">Contacto</a></div><a class="btn btn-dark nav-cta" href="#contacto">Publicitá tu evento <svg>
+        <use href="#i-arrow" />
+      </svg></a><button class="mobile-toggle" id="mobileToggle" aria-controls="navLinks" aria-label="Abrir menú" aria-expanded="false"><svg>
+        <use href="#i-menu" />
+      </svg></button>
+  </nav>
+</header>
+<main id="contenido">
+  <section class="section agenda" id="agenda">
+    <div class="container">
+      <div class="section-head-row">
+        <div class="head-actions"><a class="btn btn-instagram" href="https://www.instagram.com/corre.enterate" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-instagram"/></svg> Seguinos en Instagram</a>
+<a class="btn btn-outline" href="#contacto">Sumá tu carrera <svg>
+            <use href="#i-arrow" />
+          </svg></a></div>
+      </div>
+      <div class="agenda-controls"><label class="field"><svg>
+            <use href="#i-flag" />
+          </svg><select id="filterSport" aria-label="Filtrar disciplina">
+            <option value="">Todas las disciplinas</option>
+            <option>Running</option>
+            <option>Trail</option>
+            <option>MTB</option>
+            <option>Aguas abiertas</option>
+          </select></label><label class="field"><svg>
+            <use href="#i-pin" />
+          </svg><select id="filterRegion" aria-label="Filtrar ubicación">
+            <option value="">Todas las ubicaciones</option>
+            <option>Entre Ríos</option>
+            <option>Buenos Aires</option>
+            <option>Mendoza</option>
+            <option>Uruguay</option>
+          </select></label></div>
+      <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+    </div>
+  </section>
+    <section class="hero" id="difusion">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Medio de difusión deportiva</div>
+        <h1>Hacé que tu evento <em>llegue más lejos.</em></h1>
+        <p class="hero-desc">Conectamos organizadores, marcas y corredores. Promocionamos desafíos deportivos y reunimos las próximas carreras de Argentina y Uruguay en un solo lugar.</p>
+        <div class="hero-actions"><a class="btn btn-dark" href="#organizadores">Quiero publicitar <svg><use href="#i-arrow"/></svg></a>
+<a class="btn btn-outline" href="#agenda">Ver agenda <svg>
+              <use href="#i-arrow" />
+            </svg></a></div>
+        <p class="hero-note">Running · Trail · MTB · Aguas abiertas</p>
+        <div class="mini-kpis">
+          <div><b>+ 26 mil</b><small>seguidores en Instagram</small></div>
+          <div><b>+ 4 mill.</b><small>visualizaciones en 30 días</small></div>
+        </div>
+      </div>
+      </div>
+  </section>
+  
+  <section class="section commercial" id="organizadores">
+    <div class="container commercial-layout">
+      <div><span class="section-label">Publicidad para organizadores</span>
+        <h2>Tu carrera merece ser conocida.</h2>
+        <p class="lead">Sabemos el trabajo que existe detrás de cada evento. Te ayudamos a mostrarlo con una comunicación cercana, cuidando la imagen de tu organización.</p>
+        <div class="commercial-benefits">
+          <div class="benefit"><svg>
+              <use href="#i-check" />
+            </svg><span>Publicaciones en el feed y reels promocionales.</span></div>
+          <div class="benefit"><svg>
+              <use href="#i-check" />
+            </svg><span>Historias rotativas y difusión de novedades, circuitos y kits.</span></div>
+          <div class="benefit"><svg>
+              <use href="#i-check" />
+            </svg><span>Enlace de inscripción y acompañamiento en las consultas.</span></div>
+          <div class="benefit"><svg>
+              <use href="#i-check" />
+            </svg><span>Posibilidad de destacar la carrera también en nuestra web.</span></div>
+        </div><button type="button" class="btn btn-dark" id="proposalBtn">Solicitar propuesta <svg>
+            <use href="#i-arrow" />
+          </svg></button>
+      </div>
+    </div>
+  </section>
+  <section class="contact" id="contacto">
+    <div class="container contact-grid">
+      <div><span class="section-label">Hablemos de tu proyecto</span>
+        <h2 class="section-title">Hagamos que más personas conozcan tu evento.</h2>
+        <p class="lead">¿Organizás una carrera o representás una marca? Contanos tu idea. Te ayudamos a encontrar una forma de difusión que se adapte a tu proyecto.</p>
+        <div class="contact-points">
+          <div class="contact-point"><svg>
+              <use href="#i-instagram" />
+            </svg><span>Instagram: @corre.enterate</span></div>
+          <div class="contact-point"><svg>
+              <use href="#i-check" />
+            </svg><span>Propuestas personalizadas, sin tarifas inventadas</span></div>
+          <div class="contact-point"><svg>
+              <use href="#i-users" />
+            </svg><span>Comunidad deportiva real y activa</span></div>
+        </div>
+        <button type="button" class="btn btn-cream" id="contactBtn">CONTACTANOS</button>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">CORRÉ Y ENTÉRATE · CE</div>
+      <div class="footer-note">Agenda & difusión deportiva.</div>
+    </div>
+    <div class="footer-links"><a href="#agenda">Agenda</a><a href="#organizadores">Publicidad</a><a href="https://www.instagram.com/corre.enterate/" target="_blank" rel="noopener">Instagram ↗</a></div>
+  </div>
+</footer>
+<dialog id="eventDialog" aria-labelledby="modalTitle"><button class="close" id="modalClose" aria-label="Cerrar">×</button>
+  <div class="section-label">Vista previa de ficha de evento</div>
+  <h3 id="modalTitle"></h3>
+  <p id="modalInfo"></p>
+  <p><strong>En la web publicada:</strong> acá irían el circuito, horarios, reglamento, organizador, fotos, inscripciones y resultados disponibles.</p><button class="btn btn-dark" id="modalOk">Entendido <svg>
+      <use href="#i-check" />
+    </svg></button>
+</dialog>
+<dialog id="contactDialog" aria-labelledby="contactTitle"><button class="close" id="contactClose" aria-label="Cerrar">×</button>
+  <div class="section-label">Hablemos</div>
+  <h3 id="contactTitle">Contactanos</h3>
+  <p>Escribinos o llamanos al:</p>
+  <a class="contact-phone" href="tel:+549345626381">+54 9 345 626381</a>
+</dialog>
+<script>
+(() => {
+  'use strict';
+
+  // ---------- Datos de ejemplo (fecha en formato ISO: AAAA-MM-DD) ----------
+  const MOSTRAR_PASADOS = false; // true = mostrar también eventos ya realizados
+  const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+  const fechaLarga = new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+  const events = [
+    { title: 'Palmar Epic Race · Rally MTB',      iso: '2026-11-01', sport: 'MTB',            region: 'Entre Ríos',   location: 'Entre Ríos',            dist: 'MTB',                   art: 'mtb' },
+    { title: 'Maratón Cruz Roja',                  iso: '2026-11-29', sport: 'Running',        region: 'Buenos Aires', location: 'La Plata, Buenos Aires', dist: '3K · 10K',              art: 'running' },
+    { title: 'Cross Aventura · La Cascadita',      iso: '2026-12-06', sport: 'Trail',          region: 'Entre Ríos',   location: 'Concordia, Entre Ríos',  dist: '5K · 10K',              art: 'trail' },
+    { title: 'Open Water Uruguay · La Floresta',   iso: '2027-02-13', sport: 'Aguas abiertas', region: 'Uruguay',      location: 'La Floresta, Uruguay',   dist: '6K · 12K',              art: 'water' },
+    { title: 'Reto al Cañón del Atuel',            iso: '2027-04-03', sport: 'Trail',          region: 'Mendoza',      location: 'San Rafael, Mendoza',    dist: '6K · 12K · 22K · 30K · 42K', art: 'trail' }
+  ].map(e => {
+    const d = new Date(`${e.iso}T12:00:00`);
+    return { ...e, date: fechaLarga.format(d), day: String(d.getDate()).padStart(2, '0'), month: MESES[d.getMonth()], time: d.getTime() };
+  }).sort((a, b) => a.time - b.time);
+
+  // ---------- Utilidades ----------
+  const $ = id => document.getElementById(id);
+  const icon = name => `<svg aria-hidden="true"><use href="#i-${name}"/></svg>`;
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+  // ---------- Agenda ----------
+  const grid = $('eventGrid');
+  const dialog = $('eventDialog');
+
+  function drawEvents() {
+    const sport = $('filterSport').value;
+    const region = $('filterRegion').value;
+    const hoy = new Date(); hoy.setHours(0, 0, 0, 0);
+
+    const found = events.filter(x =>
+      (MOSTRAR_PASADOS || x.time >= hoy.getTime()) &&
+      (!sport || x.sport === sport) &&
+      (!region || x.region === region)
+    );
+
+    grid.replaceChildren();
+    if (!found.length) {
+      grid.innerHTML = '<div class="empty-events">No hay eventos de ejemplo con esos filtros. Probá otra búsqueda.</div>';
+      return;
+    }
+
+    for (const x of found) {
+      const card = document.createElement('article');
+      card.className = 'event-card';
+      card.innerHTML = `
+        <div class="event-art ${esc(x.art)}">
+          <div class="date-tag"><strong>${x.day}</strong><span>${x.month}</span></div>
+          <b>${esc(x.sport)}</b>
+        </div>
+        <div class="event-content">
+          <h3>${esc(x.title)}</h3>
+          <div class="event-meta">${icon('pin')} ${esc(x.location)}</div>
+          <div class="distances">${esc(x.dist)}</div>
+          <div class="event-bottom">
+            <span>Ver ficha del evento</span>
+            <button type="button" aria-label="Ver información de ${esc(x.title)}">${icon('arrow')}</button>
+          </div>
+        </div>`;
+      card.querySelector('button').addEventListener('click', () => showEvent(x));
+      grid.append(card);
+    }
+  }
+
+  ['filterSport', 'filterRegion'].forEach(id => $(id).addEventListener('input', drawEvents));
+  drawEvents();
+
+  // ---------- Modal de ficha ----------
+  function showEvent(x) {
+    $('modalTitle').textContent = x.title;
+    $('modalInfo').textContent = `${x.date} · ${x.location} · ${x.sport} · ${x.dist}. Información mostrada como ejemplo de ficha; confirmar con la organización antes de publicarla.`;
+    dialog.showModal();
+  }
+  $('modalClose').onclick = () => dialog.close();
+  $('modalOk').onclick = () => dialog.close();
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+
+  // ---------- Modal de contacto ----------
+  const contactDialog = $('contactDialog');
+  $('contactBtn').onclick = () => contactDialog.showModal();
+  $('proposalBtn').onclick = () => contactDialog.showModal();
+  $('contactClose').onclick = () => contactDialog.close();
+  contactDialog.addEventListener('click', e => { if (e.target === contactDialog) contactDialog.close(); });
+
+  // ---------- Menú móvil ----------
+  const toggle = $('mobileToggle');
+  const links = $('navLinks');
+  const setMenu = open => {
+    links.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
+  toggle.onclick = () => setMenu(!links.classList.contains('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+})();
+</script>
+</body>
+</html>
