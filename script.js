@@ -2,7 +2,7 @@
   'use strict';
 
   // ---------- Configuración ----------
-  const API_URL = 'https://cronomet.com.ar/ce/php/getevt.php';   // si está en otro dominio: 'https://tudominio.com/getevt.php'
+  const API_URL = 'https://www.cronomet.com.ar/ce/php/getevt.php';   // si está en otro dominio: 'https://tudominio.com/getevt.php'
   const MOSTRAR_PASADOS = false;  // true = mostrar también eventos ya realizados
   const MESES = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
   const fechaLarga = new Intl.DateTimeFormat('es-AR', { day: 'numeric', month: 'long', year: 'numeric' });
