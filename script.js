@@ -103,12 +103,11 @@
           <h3>${esc(x.title)}</h3>
           <div class="event-meta">${icon('pin')} ${esc(x.location)}</div>
           <div class="distances">${esc(x.dist)}</div>
-          <div class="event-bottom">
-            <span>Ver ficha del evento</span>
-            <button type="button" aria-label="Ver información de ${esc(x.title)}">${icon('arrow')}</button>
-          </div>
+          <button type="button" class="event-bottom" aria-label="Ver ficha de ${esc(x.title)}">
+            <span>Ver ficha del evento</span>${icon('arrow')}
+          </button>
         </div>`;
-      card.querySelector('button').addEventListener('click', () => showEvent(x));
+      card.querySelector('.event-bottom').addEventListener('click', () => showEvent(x));
       grid.append(card);
     }
   }
@@ -141,17 +140,23 @@
   // ---------- Modal de ficha ----------
   function showEvent(x) {
     $('modalTitle').textContent = x.title;
+    $('modalInfo').textContent = [x.date, x.location, x.sport, x.dist].filter(Boolean).join(' · ');
 
-    const resumen = `${x.date} · ${x.location} · ${x.sport} · ${x.dist}`;
+    // Links (solo se muestra el bloque si hay al menos uno)
     const links = [
-      x.inscripcion && `<a href="${esc(x.inscripcion)}" target="_blank" rel="noopener noreferrer">Inscripción</a>`,
-      x.ig && `<a href="${esc(x.ig)}" target="_blank" rel="noopener noreferrer">Instagram</a>`
-    ].filter(Boolean).join(' · ');
+      x.inscripcion && { label: 'Inscripción', url: x.inscripcion },
+      x.ig && { label: 'Instagram', url: x.ig }
+    ].filter(Boolean);
+    $('modalLinksBox').hidden = !links.length;
+    $('modalLinks').innerHTML = links
+      .map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">${esc(l.label)}</a></li>`)
+      .join('');
 
-    $('modalInfo').innerHTML =
-      `<span>${esc(resumen)}</span>` +
-      (x.info ? `<br><br>${esc(x.info)}` : '') +
-      (links ? `<br><br>${links}` : '');
+    // Información adicional (columna `info`)
+    const info = (x.info || '').trim();
+    const extra = $('modalExtra');
+    extra.textContent = info || 'No hay información adicional.';
+    extra.classList.toggle('is-empty', !info);
 
     dialog.showModal();
   }

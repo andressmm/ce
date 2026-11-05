@@ -1,17 +1,18 @@
 :root {
-  --pine: #1e3729;
-  --forest: #294636;
-  --olive: #5e7051;
-  --soft: #e7e8dc;
+  --pine: #d9c3a5;   /* color base (fondos principales: barra superior, botones, contacto) */
+  --forest: #c4aa86; /* variante más oscura (hover, bordes de acento) */
+  --olive: #7a6244;  /* acentos de texto sobre fondo claro */
+  --deep: #3b2f21;   /* marrón oscuro: textos sobre el color base y footer */
+  --soft: #efe7d8;
   --cream: #f8f5ed;
   --beige: #eeeadd;
   --paper: #fffdf8;
-  --ink: #233029;
-  --muted: #647067;
-  --line: #e2e0d4;
+  --ink: #33291d;
+  --muted: #75695a;
+  --line: #e6ddcd;
   --gold: #bc946b;
   --radius: 22px;
-  --shadow: 0 20px 60px rgba(18, 44, 28, .10)
+  --shadow: 0 20px 60px rgba(60, 45, 25, .10)
 }
 
 * {
@@ -51,7 +52,7 @@ a:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #b2c18c;
+  outline: 3px solid #b8955f;
   outline-offset: 3px
 }
 
@@ -78,7 +79,7 @@ svg {
 
 .topbar {
   background: var(--pine);
-  color: #e7ebdf;
+  color: var(--deep);
   padding: 9px 0;
   font-size: 11px;
   letter-spacing: 2.1px;
@@ -87,7 +88,7 @@ svg {
 }
 
 .topbar b {
-  color: #efe3c8;
+  color: #5a4529;
   font-weight: 650
 }
 
@@ -143,7 +144,7 @@ svg {
 
 .nav-links a {
   font-size: 13px;
-  color: #455b4b;
+  color: #5a4c3a;
   font-weight: 620
 }
 
@@ -176,22 +177,22 @@ svg {
 
 .btn-dark {
   background: var(--pine);
-  color: white
+  color: var(--deep)
 }
 
 .btn-dark:hover {
-  background: #365741
+  background: var(--forest)
 }
 
 .btn-outline {
-  border: 1px solid #9caf9a;
-  color: var(--pine);
+  border: 1px solid #c4aa86;
+  color: var(--deep);
   background: transparent
 }
 
 .btn-light {
   background: var(--paper);
-  color: var(--pine)
+  color: var(--deep)
 }
 
 .nav-cta {
@@ -203,7 +204,7 @@ svg {
   background: none;
   border: none;
   padding: 9px;
-  color: var(--pine)
+  color: var(--deep)
 }
 
 .mobile-toggle svg {
@@ -223,7 +224,7 @@ svg {
   content: "";
   width: 370px;
   height: 400px;
-  border: 1px solid #d3dbcb;
+  border: 1px solid #e0d4bf;
   border-radius: 55% 40% 60% 45%;
   top: -200px;
   left: -180px;
@@ -235,7 +236,7 @@ svg {
   content: "";
   width: 310px;
   height: 380px;
-  border: 1px solid #d1d9c9;
+  border: 1px solid #e0d4bf;
   border-radius: 55%;
   right: -170px;
   bottom: -230px;
@@ -264,7 +265,7 @@ svg {
   content: "";
   width: 27px;
   height: 1px;
-  background: #a2ad99
+  background: #c4aa86
 }
 
 .hero h1,
@@ -289,7 +290,7 @@ svg {
 
 .hero-desc {
   font-size: 16px;
-  color: #5a655c;
+  color: #6b5f50;
   line-height: 1.78;
   max-width: 470px;
   margin: 0 0 31px
@@ -304,7 +305,7 @@ svg {
 
 .hero-note {
   margin: 21px 0 0;
-  color: #7a8477;
+  color: #8a7d6c;
   font-size: 12px
 }
 
@@ -317,7 +318,7 @@ svg {
 
 .mini-kpis>div {
   padding-right: 26px;
-  border-right: 1px solid #cfd5c8
+  border-right: 1px solid #ddd0ba
 }
 
 .mini-kpis>div:last-child {
@@ -326,7 +327,7 @@ svg {
 
 .mini-kpis b {
   display: block;
-  color: var(--pine);
+  color: var(--deep);
   font: 30px Georgia, serif;
   letter-spacing: -1px
 }
@@ -334,7 +335,7 @@ svg {
 .mini-kpis small {
   display: block;
   margin-top: 6px;
-  color: #777e71;
+  color: #857868;
   font-size: 11px;
   line-height: 1.3
 }
@@ -365,7 +366,7 @@ svg {
 
 .lead {
   line-height: 1.77;
-  color: #617064;
+  color: #75695a;
   font-size: 15px;
   max-width: 640px
 }
@@ -394,14 +395,14 @@ svg {
 
 .field {
   background: #faf9f4;
-  border: 1px solid #e1e3d9;
+  border: 1px solid #e6ddcd;
   border-radius: 13px;
   display: flex;
   gap: 11px;
   align-items: center;
   padding: 0 17px;
   height: 53px;
-  color: #859084
+  color: #8f8372
 }
 
 .field svg {
@@ -419,7 +420,7 @@ svg {
 }
 
 .field input::placeholder {
-  color: #8c988b
+  color: #9a8e7d
 }
 
 .event-grid {
@@ -440,18 +441,19 @@ svg {
 
 .event-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(33, 49, 40, .08)
+  box-shadow: 0 16px 32px rgba(60, 45, 25, .08)
 }
 
 .event-art {
-  height: 145px;
+  height: 84px;
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: end;
-  padding: 17px;
+  align-items: center;
+  gap: 14px;
+  padding: 0 17px;
   color: white;
-  background: #617b70
+  background: #b09a78
 }
 
 .event-art:before {
@@ -466,19 +468,20 @@ svg {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(7, 32, 27, .65), transparent 85%)
+  background: linear-gradient(90deg, rgba(35, 25, 12, .45), rgba(35, 25, 12, .12))
 }
 
 .event-art b {
   position: relative;
   z-index: 1;
-  font-size: 10px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .35)
 }
 
 .event-art.trail {
-  background: linear-gradient(130deg, #486250, #a4ae8e 65%, #bfa783)
+  background: linear-gradient(130deg, #7a6244, #a88f69 65%, #c4aa86)
 }
 
 .event-art.running {
@@ -486,7 +489,7 @@ svg {
 }
 
 .event-art.mtb {
-  background: linear-gradient(130deg, #5c6951, #b6a77c 65%, #e2c994)
+  background: linear-gradient(130deg, #8a7350, #b89a63 65%, #d9bd85)
 }
 
 .event-art.water {
@@ -494,13 +497,12 @@ svg {
 }
 
 .date-tag {
-  position: absolute;
-  top: 15px;
-  left: 15px;
+  position: relative;
+  flex-shrink: 0;
   z-index: 3;
   background: #fffdf7;
   border-radius: 9px;
-  color: var(--pine);
+  color: var(--deep);
   padding: 9px 10px;
   display: grid;
   text-align: center;
@@ -528,7 +530,7 @@ svg {
 .event-category {
   font-size: 10px;
   font-weight: 750;
-  color: #6a826d;
+  color: #8a7254;
   letter-spacing: 1.4px;
   text-transform: uppercase
 }
@@ -541,7 +543,7 @@ svg {
 
 .event-meta {
   font-size: 12px;
-  color: #6d7b70;
+  color: #7d705f;
   line-height: 1.7;
   display: flex;
   align-items: center;
@@ -554,7 +556,7 @@ svg {
 }
 
 .distances {
-  color: #41574a;
+  color: #5a4a35;
   font-weight: 750;
   font-size: 11px;
   margin: 13px 0 19px
@@ -563,40 +565,54 @@ svg {
 .event-bottom {
   margin-top: auto;
   padding-top: 16px;
-  border-top: 1px solid #edf0e8;
+  border-top: 1px solid #ece3d3;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
-  color: #3f5e43;
+  color: #6b5436;
   font-weight: 750
 }
 
-.event-bottom button {
-  padding: 4px 0;
+/* Toda la fila "Ver ficha del evento" es el botón */
+button.event-bottom {
+  width: 100%;
+  padding: 16px 0 4px;
   border: 0;
+  border-top: 1px solid var(--line);
   background: none;
-  color: inherit;
+  color: #6b5436;
+  font: inherit;
+  font-size: 12px;
   font-weight: 750;
-  font-size: 12px
+  text-align: left;
+  cursor: pointer
 }
 
-.event-bottom button:hover {
+button.event-bottom svg {
+  transition: transform .15s
+}
+
+button.event-bottom:hover span {
   text-decoration: underline
+}
+
+button.event-bottom:hover svg {
+  transform: translateX(3px)
 }
 
 .empty-events {
   grid-column: 1/-1;
-  border: 1px dashed #cbd0c6;
+  border: 1px dashed #d9cdb8;
   border-radius: 16px;
   padding: 35px;
   text-align: center;
-  color: #6d746e
+  color: #7d705f
 }
 
 .agenda-foot {
   font-size: 11px;
-  color: #8b938a;
+  color: #968a79;
   margin: 22px 0 0
 }
 
@@ -622,20 +638,20 @@ svg {
   gap: 11px;
   align-items: start;
   font-size: 14px;
-  color: #4e6152;
+  color: #5e5040;
   line-height: 1.5
 }
 
 .benefit svg {
   width: 18px;
   height: 18px;
-  color: #63866e;
+  color: #9a7b4f;
   flex-shrink: 0
 }
 
 .contact {
   background: var(--pine);
-  color: #fff;
+  color: var(--deep);
   padding: 95px 0
 }
 
@@ -647,11 +663,11 @@ svg {
 }
 
 .contact .section-label {
-  color: #c7d3bf
+  color: #5a4529
 }
 
 .contact .lead {
-  color: #c5d0c2
+  color: #4a3b29
 }
 
 .contact-points {
@@ -665,18 +681,18 @@ svg {
   align-items: center;
   gap: 12px;
   font-size: 13px;
-  color: #e4eadd
+  color: var(--deep)
 }
 
 .contact-point svg {
-  color: #d9e8d1;
+  color: #5a4529;
   width: 18px;
   height: 18px
 }
 
 footer {
-  background: #14281d;
-  color: #d6e1d7;
+  background: var(--deep);
+  color: #eadfcb;
   padding: 34px 0
 }
 
@@ -695,11 +711,11 @@ footer {
 
 .footer-links a {
   font-size: 12px;
-  color: #c9d4c8
+  color: #dccfb7
 }
 
 .footer-note {
-  color: #8b9e90;
+  color: #b3a48b;
   font-size: 11px;
   margin-top: 9px
 }
@@ -717,11 +733,11 @@ dialog {
   max-width: min(460px, calc(100% - 30px));
   width: 100%;
   box-shadow: 0 20px 90px rgba(0, 0, 0, .25);
-  color: var(--pine)
+  color: var(--deep)
 }
 
 dialog::backdrop {
-  background: rgba(18, 35, 25, .60)
+  background: rgba(40, 30, 18, .60)
 }
 
 dialog h3 {
@@ -732,18 +748,18 @@ dialog h3 {
 dialog p {
   font-size: 14px;
   line-height: 1.75;
-  color: #56695a
+  color: #6b5f50
 }
 
 dialog .close {
   float: right;
-  background: #edf0e9;
+  background: #f1e9db;
   border: 0;
   width: 34px;
   height: 34px;
   border-radius: 50%;
   font-size: 21px;
-  color: #284334
+  color: var(--deep)
 }
 
 @media(max-width:1000px) {
@@ -805,7 +821,7 @@ dialog .close {
     align-items: stretch;
     gap: 0;
     margin: 0;
-    border-bottom: 1px solid #d9ddcf;
+    border-bottom: 1px solid #e6ddcd;
     padding: 12px 25px 20px
   }
 
@@ -815,7 +831,7 @@ dialog .close {
 
   .nav-links a {
     padding: 13px 0;
-    border-bottom: 1px solid #e5e7dd
+    border-bottom: 1px solid #ece4d6
   }
 
   .hero {
@@ -883,7 +899,7 @@ dialog .close {
   }
 
   .event-art {
-    height: 118px
+    height: 76px
   }
 
   .event-content {
@@ -899,8 +915,6 @@ dialog .close {
   }
 
   .date-tag {
-    top: 9px;
-    left: 9px;
     min-width: 46px;
     padding: 8px
   }
@@ -938,7 +952,7 @@ dialog .close {
   }
 
   .event-art {
-    height: 143px
+    height: 84px
   }
 
   .event-content h3 {
@@ -958,7 +972,7 @@ dialog .close {
   }
 }
 /* Mejoras de accesibilidad y robustez */
-.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:var(--pine);color:#fff;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:700}
+.skip-link{position:absolute;left:12px;top:-60px;z-index:100;background:var(--pine);color:var(--deep);padding:12px 18px;border-radius:999px;font-size:13px;font-weight:700}
 .skip-link:focus{top:12px}
 section[id]{scroll-margin-top:90px}
 h1,h2,h3{text-wrap:balance}
@@ -970,7 +984,7 @@ h1,h2,h3{text-wrap:balance}
    Refinamiento minimalista: mismos colores y tipografías,
    menos ornamento, más aire, bordes finos y sombras mínimas
    ========================================================== */
-:root{--radius:14px;--shadow:0 12px 40px rgba(18,44,28,.07)}
+:root{--radius:14px;--shadow:0 12px 40px rgba(60,45,25,.07)}
 
 /* Quitar ornamentos decorativos */
 .hero::before,.hero::after{display:none}
@@ -981,15 +995,15 @@ h1,h2,h3{text-wrap:balance}
 .topbar{padding:8px 0;font-size:10px;letter-spacing:2.4px;font-weight:400}
 .nav-wrap{backdrop-filter:blur(14px)}
 .nav-links a{font-weight:500;color:var(--muted)}
-.nav-links a:hover{color:var(--pine)}
+.nav-links a:hover{color:var(--olive)}
 .brand-text strong{font-weight:650;letter-spacing:1px;font-size:14px}
 .brand-text small{letter-spacing:1.2px}
 
 /* Botones: planos y sobrios */
 .btn{padding:14px 24px;font-weight:600;letter-spacing:.2px}
 .btn:hover{transform:none}
-.btn-dark:hover{background:var(--olive)}
-.btn-outline{border-color:#b9c4b4}
+.btn-dark:hover{background:var(--forest)}
+.btn-outline{border-color:#cdb895}
 .btn-outline:hover{background:var(--soft)}
 
 /* Tipografía: más liviana y con mejor ritmo */
@@ -1006,8 +1020,8 @@ h1,h2,h3{text-wrap:balance}
 .field{background:transparent;border-color:var(--line);border-radius:12px}
 .field:focus-within{border-color:var(--olive)}
 .event-card{border-radius:var(--radius);box-shadow:none}
-.event-card:hover{transform:none;box-shadow:none;border-color:#b9c4b4}
-.event-art{height:128px}
+.event-card:hover{transform:none;box-shadow:none;border-color:#cdb895}
+.event-art{height:84px}
 .date-tag{border-radius:8px;padding:8px 10px}
 .event-content{padding:22px}
 .event-content h3{font-size:22px}
@@ -1046,8 +1060,8 @@ dialog{border-radius:var(--radius)}
 
 /* Botón Instagram: verde de la marca + degradé de Instagram */
 .head-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
-.btn-instagram{color:var(--pine);background:linear-gradient(115deg,#c9dcbb 0%,#a9d9c4 35%,#ecdcb3 70%,#f3c9b0 100%);background-size:140% 100%;background-position:0 0;border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 22px rgba(120,160,130,.30), inset 0 1px 0 rgba(255,255,255,.7);transition:background-position .35s,box-shadow .2s,transform .15s}
-.btn-instagram:hover{background-position:100% 0;box-shadow:0 12px 28px rgba(120,160,130,.40), inset 0 1px 0 rgba(255,255,255,.8)}
+.btn-instagram{color:var(--deep);background:linear-gradient(115deg,#d9c3a5 0%,#e6d3b4 35%,#f0e0c0 70%,#f3d4b8 100%);background-size:140% 100%;background-position:0 0;border:1px solid rgba(255,255,255,.6);box-shadow:0 8px 22px rgba(150,120,80,.30), inset 0 1px 0 rgba(255,255,255,.7);transition:background-position .35s,box-shadow .2s,transform .15s}
+.btn-instagram:hover{background-position:100% 0;box-shadow:0 12px 28px rgba(150,120,80,.40), inset 0 1px 0 rgba(255,255,255,.8)}
 .btn-instagram svg{width:18px;height:18px}
 @media(max-width:760px){.head-actions{margin-top:20px}.head-actions .btn{flex:1 1 auto}}
 
@@ -1081,7 +1095,7 @@ dialog{border-radius:var(--radius)}
   font-size:13px;
   letter-spacing:2px;
   text-transform:uppercase;
-  color:var(--pine);
+  color:var(--deep);
   background:linear-gradient(135deg,#fffdf8 0%,#f3ead6 45%,#e2cfa8 100%);
   box-shadow:0 10px 26px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.8);
 }
@@ -1099,8 +1113,20 @@ dialog{border-radius:var(--radius)}
   font-size:22px;
   font-weight:750;
   letter-spacing:.5px;
-  color:var(--pine);
+  color:var(--deep);
   background:linear-gradient(135deg,#fffdf8 0%,#f3ead6 45%,#e2cfa8 100%);
   border:1px solid #e2d6b8;
 }
 #contactDialog .contact-phone:hover{filter:brightness(.97)}
+
+/* Modal de ficha: links e información adicional */
+.modal-block{margin:18px 0 0}
+.modal-block[hidden]{display:none}
+.modal-subtitle{display:flex;align-items:center;gap:8px;margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--olive)}
+.modal-subtitle svg{width:16px;height:16px}
+.modal-links{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.modal-links a{display:inline-block;font-size:14px;font-weight:600;color:var(--deep);border-bottom:1px solid #cdb895}
+.modal-links a:hover{color:var(--olive)}
+.modal-extra{margin:0;white-space:pre-line}
+.modal-extra.is-empty{font-style:italic;color:#968a79}
+#eventDialog .btn{margin-top:22px}
