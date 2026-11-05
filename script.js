@@ -53,6 +53,7 @@
       date: fechaLarga.format(d),
       day: String(d.getDate()).padStart(2, '0'),
       month: MESES[d.getMonth()],
+      year: d.getFullYear(),
       time: d.getTime()
     };
   }
@@ -96,7 +97,7 @@
       card.className = 'event-card';
       card.innerHTML = `
         <div class="event-art ${esc(x.art)}">
-          <div class="date-tag"><strong>${x.day}</strong><span>${x.month}</span></div>
+          <div class="date-tag"><strong>${x.day}</strong><span>${x.month} ${x.year}</span></div>
           <b>${esc(x.sport)}</b>
         </div>
         <div class="event-content">
