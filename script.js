@@ -54,6 +54,7 @@
       day: String(d.getDate()).padStart(2, '0'),
       month: MESES[d.getMonth()],
       year: d.getFullYear(),
+      dateShort: `${String(d.getDate()).padStart(2, '0')}/${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`,
       time: d.getTime()
     };
   }
@@ -73,7 +74,37 @@
 
   // ---------- Agenda ----------
   const grid = $('eventGrid');
+  const listWrap = $('eventList');
+  const listBody = $('eventListBody');
   const dialog = $('eventDialog');
+
+  // Vista elegida (tarjetas / listado). Se recuerda en el navegador.
+  const VISTA_KEY = 'ce_vista_agenda';
+  let vista = 'cards';
+  let cargado = false;
+  try { if (localStorage.getItem(VISTA_KEY) === 'list') vista = 'list'; } catch { /* sin almacenamiento */ }
+
+  function marcarVista() {
+    document.querySelectorAll('.view-toggle button').forEach(b => {
+      const activo = b.dataset.view === vista;
+      b.classList.toggle('active', activo);
+      b.setAttribute('aria-pressed', String(activo));
+    });
+  }
+
+  function setVista(v) {
+    vista = v === 'list' ? 'list' : 'cards';
+    try { localStorage.setItem(VISTA_KEY, vista); } catch { /* sin almacenamiento */ }
+    marcarVista();
+    if (cargado) drawEvents();
+  }
+
+  // Mensajes (cargando, error, sin resultados): se muestran siempre en el contenedor de tarjetas
+  function showMessage(texto) {
+    listWrap.hidden = true;
+    grid.hidden = false;
+    grid.innerHTML = `<div class="empty-events">${texto}</div>`;
+  }
 
   function drawEvents() {
     const sport = $('filterSport').value;
@@ -86,11 +117,19 @@
       (!region || x.region === region)
     );
 
-    grid.replaceChildren();
     if (!found.length) {
-      grid.innerHTML = '<div class="empty-events">No hay eventos con esos filtros. Probá otra búsqueda.</div>';
+      showMessage('No hay eventos con esos filtros. Probá otra búsqueda.');
       return;
     }
+    if (vista === 'list') drawList(found, hoy.getTime());
+    else drawCards(found);
+  }
+
+  // ----- Vista de tarjetas -----
+  function drawCards(found) {
+    listWrap.hidden = true;
+    grid.hidden = false;
+    grid.replaceChildren();
 
     for (const x of found) {
       const card = document.createElement('article');
@@ -113,8 +152,39 @@
     }
   }
 
+  // ----- Vista de listado (tabla) -----
+  function drawList(found, hoyMs) {
+    grid.hidden = true;
+    grid.replaceChildren();
+    listWrap.hidden = false;
+    listBody.replaceChildren(...found.map(x => listRow(x, hoyMs)));
+  }
+
+  function listRow(x, hoyMs) {
+    const pasado = x.time < hoyMs;
+    const links = [
+      x.inscripcion && `<a href="${esc(x.inscripcion)}" target="_blank" rel="noopener noreferrer">Inscripción</a>`,
+      x.ig && `<a href="${esc(x.ig)}" target="_blank" rel="noopener noreferrer">Instagram</a>`
+    ].filter(Boolean).join(' · ');
+
+    const tr = document.createElement('tr');
+    if (pasado) tr.className = 'is-past';
+    tr.innerHTML =
+      `<td class="c-date"><strong>${esc(x.dateShort)}</strong>${pasado ? '<span class="badge-past">Finalizado</span>' : ''}</td>` +
+      `<td class="c-name"><div class="l-title">${esc(x.title)}</div>${links ? `<div class="l-links">${links}</div>` : ''}</td>` +
+      `<td class="c-sport">${x.sport ? `<span class="chip">${esc(x.sport)}</span>` : ''}</td>` +
+      `<td class="c-loc">${esc(x.location)}</td>` +
+      `<td class="c-dist">${esc(x.dist)}</td>` +
+      `<td class="c-act"><button type="button" class="list-view-btn" aria-label="Ver ficha de ${esc(x.title)}"><span>Ver ficha</span>${icon('arrow')}</button></td>`;
+
+    tr.querySelector('.list-view-btn').addEventListener('click', () => showEvent(x));
+    // Click en cualquier parte de la fila (menos en los links) abre la ficha
+    tr.addEventListener('click', e => { if (!e.target.closest('a, button')) showEvent(x); });
+    return tr;
+  }
+
   async function loadEvents() {
-    grid.innerHTML = '<div class="empty-events">Cargando eventos…</div>';
+    showMessage('Cargando eventos…');
     try {
       const res = await fetch(API_URL, { headers: { 'Accept': 'application/json' } });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -128,14 +198,17 @@
 
       fillSelect('filterSport', events.map(e => e.sport));
       fillSelect('filterRegion', events.map(e => e.region));
+      cargado = true;
       drawEvents();
     } catch (err) {
       console.error('Error al cargar eventos:', err);
-      grid.innerHTML = '<div class="empty-events">No pudimos cargar los eventos. Intentá nuevamente más tarde.</div>';
+      showMessage('No pudimos cargar los eventos. Intentá nuevamente más tarde.');
     }
   }
 
   ['filterSport', 'filterRegion'].forEach(id => $(id).addEventListener('input', drawEvents));
+  document.querySelectorAll('.view-toggle button').forEach(b => b.addEventListener('click', () => setVista(b.dataset.view)));
+  marcarVista();
   loadEvents();
 
   // ---------- Modal de ficha ----------

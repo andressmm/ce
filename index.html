@@ -61,6 +61,15 @@
     <circle cx="12" cy="12" r="9" />
     <path d="M12 11v5M12 8h.01" />
   </symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24">
+    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+    <rect x="14" y="14" width="7" height="7" rx="1.5" />
+  </symbol>
+  <symbol id="i-list" viewBox="0 0 24 24">
+    <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+  </symbol>
   <symbol id="i-star" viewBox="0 0 24 24">
     <path d="m12 2 3.1 6.4 7 1-5 4.9 1.2 7-6.3-3.3-6.3 3.3 1.2-7-5-4.9 7-1z" />
   </symbol>
@@ -103,8 +112,27 @@
             <option>Buenos Aires</option>
             <option>Mendoza</option>
             <option>Uruguay</option>
-          </select></label></div>
+          </select></label>
+        <div class="view-toggle" role="group" aria-label="Tipo de vista">
+          <button type="button" data-view="cards" aria-pressed="true"><svg aria-hidden="true"><use href="#i-grid"/></svg><span>Tarjetas</span></button>
+          <button type="button" data-view="list" aria-pressed="false"><svg aria-hidden="true"><use href="#i-list"/></svg><span>Listado</span></button>
+        </div></div>
       <div class="event-grid" id="eventGrid" aria-live="polite"></div>
+      <div class="event-list" id="eventList" aria-live="polite" hidden>
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Evento</th>
+              <th>Disciplina</th>
+              <th>Ubicación</th>
+              <th>Distancias</th>
+              <th><span class="sr-only">Ficha del evento</span></th>
+            </tr>
+          </thead>
+          <tbody id="eventListBody"></tbody>
+        </table>
+      </div>
     </div>
   </section>
     <section class="hero" id="difusion">
@@ -205,6 +233,7 @@
   <p>O envianos un mensaje a nuestro Instagram:</p>
   <a class="contact-instagram" href="https://www.instagram.com/corre.enterate/" target="_blank">
     @corre.enterate
+</a>
 </dialog>
 <script src="script.js" type="module" defer></script>
 
